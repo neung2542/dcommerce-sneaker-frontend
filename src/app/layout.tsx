@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+// import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
+import Navtab from "@/nav/Navtab";
+import Footer from "./ui/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,9 +28,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`antialiased`}
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        {/* {children} */}
+        <div className="header-container">
+          <header className="bg-white grid md:grid-cols-12 px-12 items-center border-t border-b border-gray-300">
+            <div className="col-span-2"></div>
+            <div className="col-span-8">
+              <Navtab />
+            </div>
+          </header>
+        </div>
+        <main>
+          <div className="">{children}</div>
+          {/* <div className="fixed bottom-0 right-0 mb-4 mr-4 bg-gray-800 text-white text-sm rounded-lg px-4 py-2 shadow-lg">
+            Powered by CoriusDev
+          </div> */}
+        </main>
+        <Footer/>
       </body>
     </html>
   );
