@@ -1,4 +1,5 @@
 import { Shoe } from "@/types";
+import Image from "next/image";
 // import { getCategoryLabel } from "@/utils/categoryMapper";
 
 const page = async ({ params }: { params: { shoe: string } }) => {
@@ -15,7 +16,8 @@ const page = async ({ params }: { params: { shoe: string } }) => {
           <div className="">
             <div className="">
               <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src={shoe.image_url} alt={shoe.name} className="w-full" />
+                <Image src={shoe.image_url ?? ''} alt={shoe.name ?? ''} className="w-full" width={500}
+                  height={500} />
               </div>
             </div>
           </div>

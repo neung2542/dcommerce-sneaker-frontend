@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Navtab from "@/nav/Navtab";
+// import Image from "next/image";
+// import Navtab from "@/nav/Navtab";
 import { Suspense } from "react";
 import Loading from "./loading";
 import ShoeCardList from "./ui/ShoeCardList";
-import AnimateLoading from "./ui/AnimateLoading";
+// import AnimateLoading from "./ui/AnimateLoading";
 import { Shoe } from "./types";
 
 async function fetchData(): Promise<Shoe[]> {

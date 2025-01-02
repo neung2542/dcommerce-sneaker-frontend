@@ -1,5 +1,6 @@
 import { Shoe } from "@/types";
 import Link from "next/link";
+import Image from "next/image";
 
 type ShoeCardListProps = {
   shoes: Shoe[];
@@ -13,9 +14,11 @@ const ShoeCardList = ({ shoes }: ShoeCardListProps) => {
           <Link key={index} href={shoe.category_id == "1" ? `/launch/${shoe.id}` : `/upcoming/${shoe.id}`}>
             <div className="bg-white rounded-lg shadow-md">
               <div className="aspect-[3/4] relative overflow-hidden">
-                <img
-                  src={shoe.image_url}
-                  alt={shoe.name}
+                <Image
+                  src={shoe.image_url ?? ''}
+                  alt={shoe.name ?? ''}
+                  width={500}
+                  height={500}
                   className="object-fill w-full h-full rounded-lg absolute top-0 left-0"
                 />
               </div>
