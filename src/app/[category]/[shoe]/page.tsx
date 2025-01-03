@@ -2,9 +2,10 @@ import { Shoe } from "@/types";
 import Image from "next/image";
 // import { getCategoryLabel } from "@/utils/categoryMapper";
 
-const page = async ({ params }: { params: { shoe: string } }) => {
-  // const shoeId = (await params).shoe;
-  const shoeId = params.shoe
+const page = async ({ params }: { params: Promise<{ shoe: string }> }) => {
+  const shoeId = (await params).shoe;
+  // console.log(params);
+  
   const res = await fetch(
     `https://sneaker-store-api-6qe0.onrender.com/api/sneakers/product/${shoeId}`
   );
