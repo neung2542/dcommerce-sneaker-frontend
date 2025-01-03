@@ -1,9 +1,12 @@
 import { Shoe } from "@/types";
 import Image from "next/image";
 // import { getCategoryLabel } from "@/utils/categoryMapper";
+type Params = Promise<{ shoe: string }>
 
-const page = async ({ params }: { params: Promise<{ shoe: string }> }) => {
-  const shoeId = (await params).shoe;
+const page = async (props: { params: Params }) => {
+  // const shoeId = (await params).shoe;
+  const params = await props.params;
+  const shoeId = params.shoe;
   // console.log(params);
   
   const res = await fetch(
