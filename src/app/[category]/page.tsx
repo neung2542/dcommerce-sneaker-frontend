@@ -13,8 +13,8 @@ async function fetchData(category: string): Promise<Shoe[]> {
     }, 3000); // Simulate a 3-second delay
   });
 }
-
-const page = async ({ params }: { params: { category: string } }) => {
+// { params }: { params: Promise<{ shoe: string }> }
+const page = async ({ params }: { params: Promise<{ category: string }> }) => {
   const category = (await params).category == "launch" ? "1" : "2";
 
   const shoes = await fetchData(category);
