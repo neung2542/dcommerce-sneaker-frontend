@@ -10,3 +10,8 @@ export type Shoe = {
     price?: number;
     image_url?: string;
   };
+
+  export type CartItem = Shoe & {
+    size: string; // Size of the shoe (e.g., "US 9")
+    quantity: number; // Quantity of the item in the cart
+  };

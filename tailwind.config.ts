@@ -12,6 +12,9 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      boxShadow: {
+        'inset-gray': 'inset 0 0 0 0 black',
+      },
     },
   },
   plugins: [],
