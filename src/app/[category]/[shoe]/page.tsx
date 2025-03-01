@@ -17,8 +17,8 @@ const page = async (props: { params: Params }) => {
   const shoe: Shoe = await res.json();
 
   return (
-    <div className="py-6 md:py-12">
-      <div className="grid grid-cols-1 md:grid-cols-12 px-12">
+    <div className="py-6 md:py-12 global-container">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:px-12 md:gap-0">
         <div className="col-span-7">
           {
             shoe.image_url &&

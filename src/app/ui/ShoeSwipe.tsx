@@ -111,7 +111,7 @@ const ShoeSwipe: React.FC<ShoeSwipeProps> = ({ image, name }) => {
                   <Image
                     src={img}
                     alt={name}
-                    className="w-full"
+                    className="w-full aspect-square"
                     width={500}
                     height={500}
                   />
