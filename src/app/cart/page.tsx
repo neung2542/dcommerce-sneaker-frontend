@@ -13,8 +13,9 @@ const CartDisplay: React.FC = () => {
   };
 
   return (
-    <div className="py-6 px-4">
-      <div className="grid lg:grid-cols-3 grey-bg global-container py-6 rounded-lg gap-6">
+    <div className="global-container py-6">
+      
+      <div className="grid lg:grid-cols-3 grey-bg px-8 py-6 rounded-lg gap-6 ">
         <div className="lg:col-span-2">
           <h2 className="text-4xl font-bold">Cart Items</h2>
           <ul>
@@ -28,8 +29,8 @@ const CartDisplay: React.FC = () => {
                       : `/upcoming/${item.id}`
                   }
                 >
-                  <div className="flex gap-4">
-                    <figure className="flex flex-row bg-white rounded-sm shadow-md overflow-hidden">
+                  <div className="flex-col md:flex-row flex gap-4">
+                    <figure className="flex flex-row bg-white rounded-sm shadow-md overflow-hidden item-center justify-center">
                       <Image
                         src={item.image_url || ""}
                         alt={item.name || ""}
@@ -70,7 +71,7 @@ const CartDisplay: React.FC = () => {
           </ul>
         </div>
         <div>
-          <div className="px-6">
+          <div className="md:px-6">
             <h2 className="text-4xl font-bold">Total</h2>
             <div className="py-6 flex flex-col gap-4">
               <div className="flex justify-between">

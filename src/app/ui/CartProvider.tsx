@@ -28,7 +28,7 @@ const CartProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [items, setItems] = useState<CartItem[]>([]);
-  const [isPopupVisible, setPopupVisible] = useState(true);
+  const [isPopupVisible, setPopupVisible] = useState(false);
 
    useEffect(() => {
     // Load cart items from cookies on mount

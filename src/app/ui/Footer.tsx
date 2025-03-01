@@ -33,7 +33,7 @@ export default function Footer() {
           <h4 className="font-semibold mb-4">Our Services</h4>
           <ul className="space-y-2">
             <li className="text-gray-300 hover:text-white transition-colors">
-              Web Development
+              {/* Web Development */}
             </li>
           </ul>
         </div>

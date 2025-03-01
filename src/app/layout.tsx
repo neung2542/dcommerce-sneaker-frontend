@@ -18,6 +18,7 @@ import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import { CartCounter } from "./ui/cart-couter";
 import { CartProvider } from "./ui/CartProvider";
+import FloatingActionButton from "@/ui/FloatingActionButton"; 
 
 export const metadata: Metadata = {
   title: "Demo Store - CoriusDev",
@@ -38,7 +39,7 @@ export default function RootLayout({
         <CartProvider>
           {/* {children} */}
           <header className="header-container">
-            <div className="bg-white grid grid-cols-12 px-12 items-center h-10">
+            <div className="bg-white grid grid-cols-12 px-12 items-center min-h-10">
               <div className="col-span-6 md:invisible">
                 <Link
                   href="/"
@@ -86,6 +87,7 @@ export default function RootLayout({
           </div> */}
           </main>
           <Footer />
+          <FloatingActionButton />
         </CartProvider>
       </body>
     </html>
