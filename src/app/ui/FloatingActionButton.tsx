@@ -27,7 +27,7 @@ const FloatingActionButton: React.FC = () => {
           </div>
           <div className="relative group">
             <a
-              href="https://coriusdev.com"
+              href="https://corius-dev.com"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-lg hover:bg-gray-100"
