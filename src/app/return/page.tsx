@@ -4,9 +4,9 @@ import { stripe } from '../lib/stripe'
 
 import ReturnSuccess from '@/ui/ReturnSuccess'
 
-export default async function Return({ searchParams }: { searchParams: { session_id: string } }) {
-    const { session_id } = await searchParams
-
+export default async function Return({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+    // const { session_id } = await searchParams
+    const session_id = (await searchParams).session_id as string
 
     if (!session_id)
         throw new Error('Please provide a valid session_id (`cs_test_...`)')
