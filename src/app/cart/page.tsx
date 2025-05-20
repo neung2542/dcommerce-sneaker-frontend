@@ -100,9 +100,9 @@ const CartDisplay: React.FC = () => {
               </p>
             </div>
             <div className="py-6">
-              <button className="bg-black text-white py-5 px-8 rounded-3xl w-full text-2xl hover:bg-gray-800 duration-300 ease-in-out">
+              <Link className="bg-black text-white py-5 px-8 rounded-3xl w-full text-2xl hover:bg-gray-800 duration-300 ease-in-out" href="/checkout">
                 Checkout
-              </button>
+              </Link>
             </div>
           </div>
         </div>

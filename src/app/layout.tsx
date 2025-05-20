@@ -18,7 +18,8 @@ import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import { CartCounter } from "./ui/cart-couter";
 import { CartProvider } from "./ui/CartProvider";
-import FloatingActionButton from "@/ui/FloatingActionButton"; 
+import FloatingActionButton from "@/ui/FloatingActionButton";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   title: "Demo Store - CoriusDev",
@@ -34,7 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`antialiased grid-layout`}
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <CartProvider>
           {/* {children} */}
@@ -89,6 +90,8 @@ export default function RootLayout({
           <Footer />
           <FloatingActionButton />
         </CartProvider>
+        <Analytics />
+
       </body>
     </html>
   );

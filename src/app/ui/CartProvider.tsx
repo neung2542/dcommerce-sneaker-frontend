@@ -18,6 +18,7 @@ interface CartContextType {
   items: CartItem[];
   addItem: (item: CartItem) => void;
   removeItem: (itemId: string, size: string) => void;
+  clearCart: () => void;
 }
 
 // Create the cart context
@@ -61,8 +62,13 @@ const CartProvider: React.FC<{ children: React.ReactNode }> = ({
     setItems(items.filter((item) => item.id !== itemId || item.size !== size));
   };
 
+  const clearCart = () => {
+    setItems([]);
+    Cookies.remove('cart'); // Clear cart from cookies
+  };
+
   return (
-    <CartContext.Provider value={{ items, addItem, removeItem }}>
+    <CartContext.Provider value={{ items, addItem, removeItem, clearCart }}>
       {children}
       {isPopupVisible && <CartPopup onClose={() => setPopupVisible(false)} />}
     </CartContext.Provider>
